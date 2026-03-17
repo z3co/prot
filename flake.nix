@@ -16,7 +16,13 @@
 				devShells.default = pkgs.mkShell {
 					name = "go";
 					packages = with pkgs; [
-						go just zsh sqlite sqlc zip
+						go 
+						just 
+						zsh 
+						sqlite 
+						sqlc 
+						zip
+						self'.packages.default
 					];
 					shellHook = ''
 						export APP_VERSION=${self'.packages.default.version}
